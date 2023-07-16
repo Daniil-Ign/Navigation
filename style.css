@@ -1,0 +1,73 @@
+* {
+  /* CSS-свойство, которое определяет поведение прокрутки для любого элемента на странице */
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 850px;
+  font-size: 5em;
+}
+
+/* Нечетные секции получают желтый цвет  */
+section:nth-child(odd) {
+  background-color: #a4f9ff;
+}
+/* 
+Четные секции получают синий цвет */
+section:nth-child(even) {
+  background-color: #8ed7ff;
+}
+/* 
+Задал позицию навбару сверху */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #083353;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: aliceblue;
+  padding: 8px 25px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  /* стилизуют заголовки с помощью прописных букв. */
+
+  display: inline-block;
+}
+/* nav a:hover {
+  background-color: #7ea43d;
+  color: #c9e8ff;
+} */
+
+nav a:hover,
+section#n1:hover ~ nav a[href="#n1"],
+section#n2:hover ~ nav a[href="#n2"],
+section#n3:hover ~ nav a[href="#n3"],
+section#n4:hover ~ nav a[href="#n4"],
+section#n5:hover ~ nav a[href="#n5"] {
+  background-color: #a8e9f1;
+  color: #0e3e44;
+}
+
+nav a:active {
+  background-color: #94fab3;
+}
+
+/* Отключение колеса прокрутки */
+::-webkit-scrollbar {
+  display: none;
+}
